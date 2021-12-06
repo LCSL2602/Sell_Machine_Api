@@ -21,6 +21,7 @@ class UsersTable extends Migration
             $table->string('rut', 12);
             $table->string('email', 100);
             $table->string('password', 100);
+            $table->timestamps();
         });
     }
 
