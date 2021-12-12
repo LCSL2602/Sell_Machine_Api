@@ -17,9 +17,9 @@ class CustomersTable extends Migration
             $table->Increments('id');
             $table->string('rut',14);
             $table->string('direction',100);
-            $table->string('email',50);
+            $table->string('email',50)->unique();
             $table->string('contact',50);
-            $table->integer('phone_number');
+            $table->string('phone_number');
             $table->timestamps();
         });
     }
