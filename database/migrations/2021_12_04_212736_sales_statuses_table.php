@@ -16,7 +16,7 @@ class SalesStatusesTable extends Migration
         Schema::create('sales_statuses', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('name',100);
-            $table->string('description',150);
+            $table->text('description',150);
             $table->timestamps();
         });
     }
