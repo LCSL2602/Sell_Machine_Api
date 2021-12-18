@@ -35,4 +35,14 @@ class User extends Authenticatable
         'password',
     ];
 
+    public static function add($data) {
+        self::create([
+            'name' => $data->name,
+            'email' => $data->email,
+            'password' => $data->password,
+            'lastname' => $data->lastname,
+            'rut' => $data->rut
+        ]);
+    }
+
 }

@@ -11,18 +11,10 @@ class UserController extends Controller
         return $Users;
     }
 
-    public function store( Request $request){
-            $user = new User();
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = $request->password;
-            $user->lastname = $request->lastname;
-            $user->rut = $request->rut;
-            $user->rol = 'Executive';
-            
-            $user->save();
-            $createAt['create'] = True;
-            return $createAt ;
+    public function store(Request $request) {
+        User::add($request);
+        $createAt['create'] = True;
+        return $createAt;
     }
 
     public function getUser( Request $request , $id){
