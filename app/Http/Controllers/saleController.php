@@ -16,7 +16,7 @@ class saleController extends Controller
         var_dump($request->all());
     }
 
-    public function getUser( Request $request , $id){
+    public function getSale( Request $request , $id){
         var_dump('get sale '.$id );
     }
 

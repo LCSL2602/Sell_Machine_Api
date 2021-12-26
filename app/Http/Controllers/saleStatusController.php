@@ -16,7 +16,7 @@ class saleStatusController extends Controller
         var_dump($request->all());
     }
 
-    public function getUser( Request $request , $id){
+    public function getSaleStatus( Request $request , $id){
         var_dump('get sale status '.$id );
     }
 

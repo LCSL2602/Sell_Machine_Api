@@ -15,7 +15,7 @@ class vendorController extends Controller
         var_dump($request->all());
     }
 
-    public function getUser( Request $request , $id){
+    public function getVendor( Request $request , $id){
         var_dump('get vendor '.$id );
     }
 

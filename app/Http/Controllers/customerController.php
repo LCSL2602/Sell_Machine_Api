@@ -15,7 +15,7 @@ class customerController extends Controller
         var_dump($request->all());
     }
 
-    public function getUser( Request $request , $id){
+    public function getCustomer( Request $request , $id){
         var_dump('get customer '.$id );
     }
 

@@ -15,7 +15,7 @@ class typeMachineController extends Controller
         var_dump($request->all());
     }
 
-    public function getUser( Request $request , $id){
+    public function getTypeMachine( Request $request , $id){
         var_dump('get type machine '.$id );
     }
 

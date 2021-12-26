@@ -16,7 +16,7 @@ class commentController extends Controller
         var_dump($request->all());
     }
 
-    public function getUser( Request $request , $id){
+    public function getComment( Request $request , $id){
         var_dump('get comment '.$id );
     }
 
