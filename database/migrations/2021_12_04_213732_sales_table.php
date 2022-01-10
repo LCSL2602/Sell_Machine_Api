@@ -30,7 +30,7 @@ class SalesTable extends Migration
             $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade')->onUpdate('cascade');
             
             $table->unsignedInteger('sale_status_id')->nullable();
-            $table->foreign('sale_status_id')->references('id')->on('sales_statuses')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('sale_status_id')->references('id')->on('sale_statuses')->onDelete('cascade')->onUpdate('cascade');
             
             $table->unsignedInteger('type_machine_id')->nullable();
             $table->foreign('type_machine_id')->references('id')->on('type_machines')->onDelete('cascade')->onUpdate('cascade');

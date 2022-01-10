@@ -2,29 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class commentController extends Controller
 {
     
-    public function index( Request $request){
-        var_dump('get all comments');
-    }
-
     public function store( Request $request){
-        var_dump('Create comment');
-        var_dump($request->all());
-    }
+        $data = $request->only('user_id','sale_id','comment');
 
-    public function getComment( Request $request , $id){
-        var_dump('get comment '.$id );
+        $comment = Comment::create($data);
+        if(!$comment) return response()->json('Server error', 500);
+
+        return response()->json($comment,200);
     }
 
     public function update( Request $request, $id){
-        var_dump('Update comment '.$id );
+        $data = $request->only('sale_id','comment');
+
+        $comment = Comment::find($id);
+        if(!$comment->update($data)) return response()->json('Server error', 500);
+
+        return response()->json($comment,200);
     }
 
-    public function remove( Request $request, $id){
-        var_dump('Delete comment '.$id);
+    public function index(){
+        $comments = Comment::get();
+        if(!$comments) return response()->json('Server error', 500);
+
+        return response()->json($comments,200);
+    }
+
+    public function getComment($id){
+        $comment = Comment::find($id);
+        if(!$comment) return response()->json('Server error', 500);
+
+        return response()->json($comment,200);
+    }
+
+    public function remove($id){
+        $comment = Comment::find($id);
+        if(!$comment->delete($id)) return response()->json('Server error', 500);
+
+        return response()->json('delete success',200);
     }
 }
