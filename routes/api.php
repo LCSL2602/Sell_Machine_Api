@@ -33,7 +33,7 @@ Route::delete('/user/{id}',[UserController::class,'remove']);
  * Api customers
  */
 Route::get('/customers',[customerController::class,'index']);
-Route::get('/customer/{id}',[customerController::class,'getUser']);
+Route::get('/customer/{id}',[customerController::class,'getCustomer']);
 Route::post('/customer',[customerController::class,'store']);
 Route::put('/customer/{id}',[customerController::class,'update']);
 Route::delete('/customer/{id}',[customerController::class,'remove']);
@@ -42,7 +42,7 @@ Route::delete('/customer/{id}',[customerController::class,'remove']);
  * Api typeMachine
  */
 Route::get('/typeMachines',[typeMachineController::class,'index']);
-Route::get('/typeMachine/{id}',[typeMachineController::class,'getUser']);
+Route::get('/typeMachine/{id}',[typeMachineController::class,'getTypeMachine']);
 Route::post('/typeMachine',[typeMachineController::class,'store']);
 Route::put('/typeMachine/{id}',[typeMachineController::class,'update']);
 Route::delete('/typeMachine/{id}',[typeMachineController::class,'remove']);
@@ -51,7 +51,7 @@ Route::delete('/typeMachine/{id}',[typeMachineController::class,'remove']);
  * Api vendor
  */
 Route::get('/vendors',[vendorController::class,'index']);
-Route::get('/vendor/{id}',[vendorController::class,'getUser']);
+Route::get('/vendor/{id}',[vendorController::class,'getVendor']);
 Route::post('/vendor',[vendorController::class,'store']);
 Route::put('/vendor/{id}',[vendorController::class,'update']);
 Route::delete('/vendor/{id}',[vendorController::class,'remove']);
@@ -60,7 +60,7 @@ Route::delete('/vendor/{id}',[vendorController::class,'remove']);
  * Api saleStatus
  */
 Route::get('/saleStatuses',[saleStatusController::class,'index']);
-Route::get('/saleStatus/{id}',[saleStatusController::class,'getUser']);
+Route::get('/saleStatus/{id}',[saleStatusController::class,'getSaleStatus']);
 Route::post('/saleStatus',[saleStatusController::class,'store']);
 Route::put('/saleStatus/{id}',[saleStatusController::class,'update']);
 Route::delete('/saleStatus/{id}',[saleStatusController::class,'remove']);
@@ -69,7 +69,7 @@ Route::delete('/saleStatus/{id}',[saleStatusController::class,'remove']);
  * Api sale
  */
 Route::get('/sales',[saleController::class,'index']);
-Route::get('/sale/{id}',[saleController::class,'getUser']);
+Route::get('/sale/{id}',[saleController::class,'getSale']);
 Route::post('/sale',[saleController::class,'store']);
 Route::put('/sale/{id}',[saleController::class,'update']);
 Route::delete('/sale/{id}',[saleController::class,'remove']);
@@ -78,7 +78,7 @@ Route::delete('/sale/{id}',[saleController::class,'remove']);
  * Api comment
  */
 Route::get('/comments',[commentController::class,'index']);
-Route::get('/comment/{id}',[commentController::class,'getUser']);
+Route::get('/comment/{id}',[commentController::class,'getComment']);
 Route::post('/comment',[commentController::class,'store']);
 Route::put('/comment/{id}',[commentController::class,'update']);
 Route::delete('/comment/{id}',[commentController::class,'remove']);

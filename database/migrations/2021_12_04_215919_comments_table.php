@@ -21,8 +21,8 @@ class CommentsTable extends Migration
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
              
-            $table->unsignedInteger('sales_id')->nullable();
-            $table->foreign('sales_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedInteger('sale_id')->nullable();
+            $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade')->onUpdate('cascade');
              
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ class SalesStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales_statuses', function (Blueprint $table) {
+        Schema::create('sale_statuses', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('name',100);
             $table->text('description',150);
@@ -28,6 +28,6 @@ class SalesStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales_statuses');
+        Schema::dropIfExists('sale_statuses');
     }
 }
