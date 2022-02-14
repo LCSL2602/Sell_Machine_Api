@@ -20,10 +20,8 @@ class CommentsTable extends Migration
              //foraneas Key
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-             
-            $table->unsignedInteger('sale_id')->nullable();
-            $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade')->onUpdate('cascade');
-             
+         
+            $table->foreignId('sale_id')->constrained('sales','id')->onDelete('cascade')->onUpdate('cascade');;
             $table->timestamps();
         });
     }

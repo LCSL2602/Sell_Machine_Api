@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
-use Illuminate\Http\Request;
+use App\Http\Requests\Customer\storeRequest;
+use App\Http\Requests\Customer\updateRequest;
 
 class customerController extends Controller
 {
-    public function store( Request $request){
+    public function store(storeRequest $request){
         $data = $request->only('rut','direction','email','contact','phone_number');
         $customer = Customer:: create($data);
         
@@ -17,10 +18,16 @@ class customerController extends Controller
     }
 
      
-    public function update( Request $request, $id){
+    public function update(updateRequest $request, $id){
         $data = $request->only('rut','direction','email','contact','phone_number');
 
         $customer = Customer::find($id);
+
+        $customers = Customer::where('id', '!=', $id)->where('rut' ,$data['rut'])->get();
+        if(count($customers) !== 0) return response()->json('Rut already exist', 400);
+
+        $customers = Customer::where('email', $data['email'])->where('id', '!=', $id)->get();
+        if(count($customers) !== 0) return response()->json('Email already exist', 400);
 
         $customer->update($data);
 

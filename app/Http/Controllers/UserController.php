@@ -2,15 +2,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\User\storeRequest;
+use App\Http\Requests\User\updateRequest;
 
 
 class UserController extends Controller
 {
     
 
-    public function store(Request $request) {
+    public function store(storeRequest $request) {
        // Get Data 
        $data = $request->only('name','lastname','rut','email','password');
         
@@ -26,7 +27,7 @@ class UserController extends Controller
 
    
 
-    public function update( Request $request, $id){
+    public function update( updateRequest $request, $id){
         $data = $request->only('name','lastname','rut','email');
 
         $user = User::find($id);
